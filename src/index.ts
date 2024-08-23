@@ -1,7 +1,10 @@
 import express, { Request, Response } from "express";
+import { config } from "dotenv";
 
+// env and app configuration
+config();
 const app = express();
-const port = 3000;
+const port: string = process.env.APPLICATION_PROT || "8000";
 
 app.get("/", (req: Request, res: Response) => {
   res.send('Hello, TypeScript with Express!');
